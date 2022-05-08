@@ -12,7 +12,7 @@ export function call(api, method, request) {
   //로컬스토리지에서 ACCESS_TOKEN 가져오기
   const accessToken = localStorage.getItem("ACCESS_TOKEN");
   if (accessToken && accessToken !== null) {
-    headers.append("Authorization", "Bearer" + accessToken);
+    headers.append("Authorization", "Bearer " + accessToken);
   }
 
   let options = {
@@ -54,4 +54,9 @@ export function signin(userDTO) {
       window.location.href = "/";
     }
   });
+}
+
+export function signout() {
+  localStorage.setItem(ACCESS_TOKEN, null);
+  window.location.href = "/login";
 }

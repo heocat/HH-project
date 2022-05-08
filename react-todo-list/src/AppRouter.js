@@ -1,10 +1,10 @@
 import React from "react";
 import "./index.css";
 import App from "./App";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Login from "./Login";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
 
 function Copyright() {
   return (

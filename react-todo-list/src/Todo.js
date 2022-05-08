@@ -1,5 +1,4 @@
 import React from "react";
-//import { ListItem, ListItemText, InputBase, Checkbox } from "@material-ui/core";
 import {
   ListItem,
   ListItemText,
@@ -7,8 +6,9 @@ import {
   Checkbox,
   ListItemSecondaryAction,
   IconButton,
-} from "@mui/material";
-import { DeleteOutlined } from "@mui/icons-material";
+} from "@material-ui/core";
+
+import DeleteOutlined from "@material-ui/icons/DeleteOutlined";
 
 class Todo extends React.Component {
   constructor(props) {
