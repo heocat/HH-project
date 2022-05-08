@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.dto.ResponseDTO;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.model.UserEntity;
+import com.example.demo.security.Tokenprovider;
 import com.example.demo.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class UserController {
     
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private Tokenprovider tokenprovider;
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO) {
@@ -52,9 +56,11 @@ public class UserController {
             userDTO.getPassword());
 
             if (user != null) {
+                final String token = tokenprovider.create(user);
                 final UserDTO responsUserDTO = UserDTO.builder()
                 .email(user.getEmail())
                 .id(user.getId())
+                .token(token)
                 .build();
                 return ResponseEntity.ok().body(responsUserDTO);
             }else{
