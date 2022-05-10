@@ -85,7 +85,9 @@ public class TodoController {
 
             List<TodoDTO> dtos = entities.stream().map(TodoDTO :: new).collect(Collectors.toList());
             ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().data(dtos).build();
+
             return ResponseEntity.ok().body(response);
+            
         } catch (Exception e) {
             String error = e.getMessage();
             ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().error(error).build();
