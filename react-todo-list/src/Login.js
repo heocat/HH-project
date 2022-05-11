@@ -22,7 +22,7 @@ class Login extends React.Component {
     const email = data.get("email");
     const password = data.get("password");
 
-    //apiService의 signin 메서드를 시용해 로그인
+    //apiService의 signin 메서드를 사용해 로그인
     signin({ email: email, password: password });
   }
 
