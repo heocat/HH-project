@@ -16,7 +16,7 @@ class Signup extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(event) {
-    event.preventDefalut();
+    event.preventDefault();
     //오브젝트에서 form에 저장된 데이터를 맵의 형태로 바꿔줌
     const data = new FormData(event.target);
     const username = data.get("username");
@@ -31,7 +31,7 @@ class Signup extends React.Component {
   }
   render() {
     return (
-      <Container component='main' masWidth='xs' style={{ marginTop: "8%" }}>
+      <Container component='main' maxWidth='xs' style={{ marginTop: "8%" }}>
         <form noValidate onSubmit={this.handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -44,6 +44,7 @@ class Signup extends React.Component {
                 autoComplete='fname'
                 name='username'
                 variant='outlined'
+                required
                 fullWidth
                 id='username'
                 label='사용자 이름'
@@ -69,6 +70,7 @@ class Signup extends React.Component {
                 id='password'
                 label='패스워드'
                 name='password'
+                type="password"
                 autoComplete='currnet-password'
               ></TextField>
             </Grid>
@@ -85,7 +87,7 @@ class Signup extends React.Component {
           </Grid>
           <Grid container justify='flex-end'>
             <Grid item>
-              <Link href='/login' variant='budy2'>
+              <Link href='/login' variant='body2'>
                 이미 계정이 있습니까? 로그인 하세요
               </Link>
             </Grid>
