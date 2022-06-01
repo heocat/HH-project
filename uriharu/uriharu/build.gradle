@@ -5,7 +5,7 @@ plugins {
 	id 'war'
 }
 
-group = 'uri.com'
+group = 'hh.com'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -29,6 +29,8 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
+	implementation group: 'com.google.guava', name: 'guava', version: '28.1-jre'
+	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
 
 }
 

@@ -1,4 +1,4 @@
-package uri.com.uriharu;
+package hh.com.uriharu;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

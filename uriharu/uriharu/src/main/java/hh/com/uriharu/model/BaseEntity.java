@@ -1,5 +1,4 @@
-package uri.com.uriharu.model;
-
+package hh.com.uriharu.model;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -15,7 +14,7 @@ import lombok.Getter;
 @MappedSuperclass
 @EntityListeners(value = AuditingEntityListener.class)
 @Getter
-public abstract class BaseModel {
+public abstract class BaseEntity {
   @CreatedDate
   @Column(name="regdate", updatable=false)
   private LocalDateTime regDate;
