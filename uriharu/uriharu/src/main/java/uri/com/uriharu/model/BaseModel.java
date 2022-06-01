@@ -1,4 +1,4 @@
-package ds.com.phoncnic.entity;
+package uri.com.uriharu.model;
 
 import java.time.LocalDateTime;
 
